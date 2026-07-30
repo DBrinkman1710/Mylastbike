@@ -6,7 +6,7 @@
 window.SITE_DATA = {
 
   // Prijs en levering
-  prijs: "€4.999",
+  prijs: "vanaf €4.999",
   levertijd: "wordt nog bepaald",
 
   // CO2 en duurzaamheid

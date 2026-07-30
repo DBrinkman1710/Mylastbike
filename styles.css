@@ -169,9 +169,15 @@ h2 { font-size: clamp(1.9rem, 4.4vw, 3.4rem); }
   font-weight: 300;
   text-wrap: balance;
 }
+.manifest_line + .manifest_line { margin-top: 2rem; }
 .manifest_line em, .manifest_line { font-style: italic; }
+.manifest_rule {
+  border: 0;
+  border-top: 1px solid var(--ti_light);
+  margin: 3rem 0 0;
+}
 .manifest_line.small {
-  margin-top: 1.6rem;
+  margin-top: 1.8rem;
   font-family: var(--display);
   font-style: normal;
   font-stretch: 110%;
@@ -180,6 +186,7 @@ h2 { font-size: clamp(1.9rem, 4.4vw, 3.4rem); }
   letter-spacing: 0.01em;
   color: var(--ti_dark);
 }
+.manifest_line.small + .manifest_line.small { margin-top: 1rem; }
 
 /* ═══ secties algemeen ═══ */
 section { padding-inline: var(--pad); }
@@ -341,6 +348,14 @@ section { padding-inline: var(--pad); }
   font-size: clamp(1.4rem, 3vw, 2.1rem);
   font-weight: 700;
   margin-top: 0.7rem;
+}
+.prijs_sub {
+  margin-top: 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  line-height: 1.55;
+  color: var(--ti_dark);
+  letter-spacing: 0.02em;
 }
 .prijs_note { margin-top: 1.8rem; font-style: italic; max-width: var(--measure); }
 
