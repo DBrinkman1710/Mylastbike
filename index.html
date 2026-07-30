@@ -15,13 +15,18 @@
   <header class="site_header">
     <a class="wordmark" href="#top">MY LAST BIKE</a>
     <nav aria-label="Hoofdnavigatie">
-      <a href="#fiets">De fiets</a>
-      <a href="#materiaal">Materiaal</a>
-      <a href="#geometrie">Geometrie</a>
-      <a href="#configurator">Bouw</a>
-      <a href="#prijs">Prijs</a>
-      <a class="nav_cta" href="#contact">Aanvragen</a>
+      <a href="#fiets" data-i18n="nav_fiets">De fiets</a>
+      <a href="#materiaal" data-i18n="nav_materiaal">Materiaal</a>
+      <a href="#geometrie" data-i18n="nav_geometrie">Geometrie</a>
+      <a href="#configurator" data-i18n="nav_bouw">Bouw</a>
+      <a href="#prijs" data-i18n="nav_prijs">Prijs</a>
+      <a class="nav_cta" href="#contact" data-i18n="nav_aanvragen">Aanvragen</a>
     </nav>
+    <div class="lang_switch" role="group" aria-label="Taal / Language">
+      <button class="lang_btn is_active" data-lang="nl" aria-pressed="true">NL</button>
+      <span class="lang_sep" aria-hidden="true">·</span>
+      <button class="lang_btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
   </header>
 
   <main id="top">
@@ -37,24 +42,24 @@
         </figcaption>
       </figure>
       <div class="hero_text">
-        <p class="eyebrow">TITANIUM · ROAD · GRAVEL · NEDERLAND</p>
-        <h1>Je laatste<br>fiets.</h1>
-        <p class="hero_sub">Eén titanium frame dat racefiets en gravelbike is. Gebouwd om elke fiets na deze overbodig te maken.</p>
-        <a class="cta" href="#contact">Vraag het frame aan</a>
+        <p class="eyebrow" data-i18n="hero_eyebrow">TITANIUM · ROAD · GRAVEL · NEDERLAND</p>
+        <h1><span data-i18n="hero_h1_1">Je laatste</span><br><span data-i18n="hero_h1_2">fiets.</span></h1>
+        <p class="hero_sub" data-i18n="hero_sub">Eén titanium frame dat racefiets en gravelbike is. Gebouwd om elke fiets na deze overbodig te maken.</p>
+        <a class="cta" href="#contact" data-i18n="hero_cta">Vraag het frame aan</a>
       </div>
     </section>
 
     <!-- ══════════ MANIFEST ══════════ -->
     <section class="manifest">
-      <p class="manifest_line">Titanium roest niet, vermoeit nauwelijks en heeft geen lak nodig. Een goed gebouwd frame gaat langer mee dan de trends die erop volgen.</p>
-      <p class="manifest_line small">Daarom bouwen we er precies één. Geen jaargangen. Geen collecties. Geen opvolger.</p>
+      <p class="manifest_line" data-i18n="manifest_1">Titanium roest niet, vermoeit nauwelijks en heeft geen lak nodig. Een goed gebouwd frame gaat langer mee dan de trends die erop volgen.</p>
+      <p class="manifest_line small" data-i18n="manifest_2">Daarom bouwen we er precies één. Geen jaargangen. Geen collecties. Geen opvolger.</p>
     </section>
 
     <!-- ══════════ DE FIETS + TOGGLE ══════════ -->
     <section class="fiets" id="fiets">
       <div class="section_head">
-        <p class="eyebrow">HET FRAME</p>
-        <h2>Eén frame, twee fietsen</h2>
+        <p class="eyebrow" data-i18n="fiets_eyebrow">HET FRAME</p>
+        <h2 data-i18n="fiets_h2">Eén frame, twee fietsen</h2>
       </div>
 
       <div class="mode_switch" role="group" aria-label="Kies opzet">
@@ -75,23 +80,23 @@
 
         <dl class="spec_list">
           <div class="spec_row">
-            <dt>Bandenruimte</dt>
+            <dt data-i18n="spec_bandenruimte">Bandenruimte</dt>
             <dd data-mode-field="bandenruimte">tot 32 mm</dd>
           </div>
           <div class="spec_row">
-            <dt>Opzet</dt>
+            <dt data-i18n="spec_opzet">Opzet</dt>
             <dd data-mode-field="opzet">Snel op asfalt, lange trainingen, wedstrijden</dd>
           </div>
           <div class="spec_row">
-            <dt>Wissel</dt>
+            <dt data-i18n="spec_wissel">Wissel</dt>
             <dd data-mode-field="wissel">Ander wielset erin en je staat op gravel</dd>
           </div>
           <div class="spec_row">
-            <dt>Legering</dt>
+            <dt data-i18n="spec_legering">Legering</dt>
             <dd data-key="legering">3Al/2.5V titanium</dd>
           </div>
           <div class="spec_row">
-            <dt>Framegewicht</dt>
+            <dt data-i18n="spec_framegewicht">Framegewicht</dt>
             <dd data-key="framegewicht">volgt na weging</dd>
           </div>
         </dl>
@@ -102,14 +107,14 @@
     <section class="materiaal" id="materiaal">
       <div class="materiaal_grid">
         <div class="materiaal_text">
-          <p class="eyebrow">MATERIAAL</p>
-          <h2>Geborsteld titanium, geen lak</h2>
-          <p>Het frame is gebouwd uit 3Al/2.5V titanium buizen en wordt geassembleerd in Nederland. De lasnaden blijven zichtbaar. De afwerking is geborsteld metaal, dus krassen poets je weg in plaats van dat je ze overspuit.</p>
+          <p class="eyebrow" data-i18n="mat_eyebrow">MATERIAAL</p>
+          <h2 data-i18n="mat_h2">Geborsteld titanium, geen lak</h2>
+          <p data-i18n="mat_body">Het frame is gebouwd uit 3Al/2.5V titanium buizen en wordt geassembleerd in Nederland. De lasnaden blijven zichtbaar. De afwerking is geborsteld metaal, dus krassen poets je weg in plaats van dat je ze overspuit.</p>
           <ul class="fact_list">
-            <li><span>Legering</span><span data-key="legering">3Al/2.5V titanium</span></li>
-            <li><span>Afwerking</span><span>Geborsteld, ongelakt</span></li>
-            <li><span>Assemblage</span><span>Nederland</span></li>
-            <li><span>Remmen</span><span>Vlakke montage schijfrem</span></li>
+            <li><span data-i18n="mat_spec_legering">Legering</span><span data-key="legering">3Al/2.5V titanium</span></li>
+            <li><span data-i18n="mat_spec_afwerking">Afwerking</span><span data-i18n="mat_spec_afwerking_val">Geborsteld, ongelakt</span></li>
+            <li><span data-i18n="mat_spec_assemblage">Assemblage</span><span data-i18n="mat_spec_assemblage_val">Nederland</span></li>
+            <li><span data-i18n="mat_spec_remmen">Remmen</span><span data-i18n="mat_spec_remmen_val">Vlakke montage schijfrem</span></li>
           </ul>
         </div>
         <figure class="shot weld_shot">
@@ -126,14 +131,20 @@
     <!-- ══════════ GEOMETRIE (donker) ══════════ -->
     <section class="geometrie" id="geometrie">
       <div class="section_head">
-        <p class="eyebrow">GEOMETRIE</p>
-        <h2>Jouw maat komt van een bikefitter, niet uit een dropdown</h2>
+        <p class="eyebrow" data-i18n="geo_eyebrow">GEOMETRIE</p>
+        <h2 data-i18n="geo_h2">Jouw maat komt van een bikefitter, niet uit een dropdown</h2>
       </div>
-      <p class="geometrie_intro">We bouwen aan een netwerk van bikefitters in Nederland. Zij meten je op voordat je bestelt, en die meting bepaalt je maat en afbouw. De volledige geometrietabel staat hier zodra de eerste meetronde is afgerond.</p>
+      <p class="geometrie_intro" data-i18n="geo_intro">We bouwen aan een netwerk van bikefitters in Nederland. Zij meten je op voordat je bestelt, en die meting bepaalt je maat en afbouw. De volledige geometrietabel staat hier zodra de eerste meetronde is afgerond.</p>
       <table class="geo_table">
         <caption class="visually_hidden">Geometrietabel per framemaat</caption>
         <thead>
-          <tr><th scope="col">Maat</th><th scope="col">Stack</th><th scope="col">Reach</th><th scope="col">Zitbuishoek</th><th scope="col">Balhoofdhoek</th></tr>
+          <tr>
+            <th scope="col" data-i18n="geo_col_maat">Maat</th>
+            <th scope="col" data-i18n="geo_col_stack">Stack</th>
+            <th scope="col" data-i18n="geo_col_reach">Reach</th>
+            <th scope="col" data-i18n="geo_col_zithoek">Zitbuishoek</th>
+            <th scope="col" data-i18n="geo_col_balhoofd">Balhoofdhoek</th>
+          </tr>
         </thead>
         <tbody id="geo_body">
           <!-- rijen komen uit data.js -->
@@ -152,10 +163,10 @@
     <!-- ══════════ CONFIGURATOR ══════════ -->
     <section class="configurator" id="configurator">
       <div class="section_head">
-        <p class="eyebrow">STEL JE FIETS SAMEN</p>
-        <h2>Kies jouw opbouw</h2>
+        <p class="eyebrow" data-i18n="conf_eyebrow">STEL JE FIETS SAMEN</p>
+        <h2 data-i18n="conf_h2">Kies jouw opbouw</h2>
       </div>
-      <p class="config_intro">Elk frame wordt gebouwd met de onderdelen die passen bij jouw gebruik. Selecteer hieronder jouw voorkeur. De meerprijs, het gewicht en de CO2 impact van elke keuze staan er direct bij. CO2 cijfers zijn indicatief op basis van industrie data — eigen meting volgt.</p>
+      <p class="config_intro" data-i18n="conf_intro">Elk frame wordt gebouwd met de onderdelen die passen bij jouw gebruik. Selecteer hieronder jouw voorkeur. De meerprijs, het gewicht en de CO2 impact van elke keuze staan er direct bij. CO2 cijfers zijn schattingen op basis van industrie data — eigen meting volgt.</p>
       <div class="config_accordion" id="config_accordion">
         <!-- gegenereerd via JS vanuit data.js -->
       </div>
@@ -163,16 +174,16 @@
 
     <!-- ══════════ DUURZAAMHEID ══════════ -->
     <section class="duurzaam" id="duurzaam">
-      <p class="eyebrow">EERLIJK OVER CO2</p>
-      <h2>Wat we nog niet weten, claimen we niet</h2>
+      <p class="eyebrow" data-i18n="duur_eyebrow">EERLIJK OVER CO2</p>
+      <h2 data-i18n="duur_h2">Wat we nog niet weten, claimen we niet</h2>
       <div class="duurzaam_grid">
         <div>
           <p class="duurzaam_stat" data-key="co2_status">nog geen gemeten cijfers</p>
-          <p class="duurzaam_label">CO2 voetafdruk per frame</p>
+          <p class="duurzaam_label" data-i18n="duur_co2_label">CO2 voetafdruk per frame</p>
         </div>
         <div class="duurzaam_text">
           <p data-key="co2_toelichting">Zodra onze eerste meting er is, staat het getal hier. Niet eerder.</p>
-          <p>De duurzaamste fiets is er één die je nooit hoeft te vervangen. Daarnaast onderzoeken we partnerschappen met carbon credit fondsen om de voetafdruk van elk frame te compenseren. Zodra dat rond is, lees je hier precies hoe het werkt.</p>
+          <p data-i18n="duur_body2">De duurzaamste fiets is er één die je nooit hoeft te vervangen. Daarnaast onderzoeken we partnerschappen met carbon credit fondsen om de voetafdruk van elk frame te compenseren. Zodra dat rond is, lees je hier precies hoe het werkt.</p>
         </div>
       </div>
     </section>
@@ -181,48 +192,48 @@
     <section class="prijs" id="prijs">
       <div class="prijs_cards">
         <div class="prijs_card">
-          <p class="prijs_label">Prijs frameset</p>
-          <p class="prijs_value" data-key="prijs">wordt nog bepaald</p>
+          <p class="prijs_label" data-i18n="prijs_label_frame">Prijs frameset</p>
+          <p class="prijs_value" data-key="prijs">€4.999</p>
         </div>
         <div class="prijs_card">
-          <p class="prijs_label">Levertijd</p>
+          <p class="prijs_label" data-i18n="prijs_label_lever">Levertijd</p>
           <p class="prijs_value" data-key="levertijd">wordt nog bepaald</p>
         </div>
       </div>
-      <p class="prijs_note">Serieuze interesse? Laat je gegevens achter, dan hoor je de prijs als eerste.</p>
+      <p class="prijs_note" data-i18n="prijs_note">Serieuze interesse? Laat je gegevens achter, dan hoor je de prijs als eerste.</p>
     </section>
 
     <!-- ══════════ CONTACT ══════════ -->
     <section class="contact" id="contact">
       <div class="section_head">
-        <p class="eyebrow">AANVRAGEN</p>
-        <h2>Begin met een gesprek</h2>
+        <p class="eyebrow" data-i18n="cont_eyebrow">AANVRAGEN</p>
+        <h2 data-i18n="cont_h2">Begin met een gesprek</h2>
       </div>
-      <p class="contact_intro">Geen winkelmandje. Je laat je gegevens achter, wij nemen contact op en plannen een meting met een bikefitter bij jou in de buurt.</p>
+      <p class="contact_intro" data-i18n="cont_intro">Geen winkelmandje. Je laat je gegevens achter, wij nemen contact op en plannen een meting met een bikefitter bij jou in de buurt.</p>
       <form id="enquiry_form" method="POST">
         <div class="form_row">
           <div class="field">
-            <label for="f_naam">Naam</label>
+            <label for="f_naam" data-i18n="cont_naam">Naam</label>
             <input id="f_naam" name="naam" type="text" autocomplete="name" required>
           </div>
           <div class="field">
-            <label for="f_mail">Mailadres</label>
+            <label for="f_mail" data-i18n="cont_mail">Mailadres</label>
             <input id="f_mail" name="mailadres" type="email" autocomplete="email" required>
           </div>
         </div>
         <fieldset class="field">
-          <legend>Waar ga je vooral rijden?</legend>
+          <legend data-i18n="cont_rijden">Waar ga je vooral rijden?</legend>
           <div class="radio_row">
-            <label class="radio"><input type="radio" name="opzet" value="road" required><span>Road</span></label>
-            <label class="radio"><input type="radio" name="opzet" value="gravel"><span>Gravel</span></label>
-            <label class="radio"><input type="radio" name="opzet" value="beide"><span>Beide</span></label>
+            <label class="radio"><input type="radio" name="opzet" value="road" required><span data-i18n="cont_road">Road</span></label>
+            <label class="radio"><input type="radio" name="opzet" value="gravel"><span data-i18n="cont_gravel">Gravel</span></label>
+            <label class="radio"><input type="radio" name="opzet" value="beide"><span data-i18n="cont_beide">Beide</span></label>
           </div>
         </fieldset>
         <div class="field">
-          <label for="f_bericht">Vertel kort over jezelf en je huidige fiets <span class="optional">(optioneel)</span></label>
+          <label for="f_bericht"><span data-i18n="cont_bericht">Vertel kort over jezelf en je huidige fiets</span> <span class="optional" data-i18n="cont_optioneel">(optioneel)</span></label>
           <textarea id="f_bericht" name="bericht" rows="4"></textarea>
         </div>
-        <button class="cta" type="submit">Verstuur aanvraag</button>
+        <button class="cta" type="submit" data-i18n="cont_submit">Verstuur aanvraag</button>
         <p class="form_status" id="form_status" role="status" aria-live="polite"></p>
       </form>
     </section>
@@ -232,30 +243,31 @@
   <div class="config_bar" id="config_bar" role="region" aria-label="Opbouw samenvatting">
     <div class="config_bar_specs">
       <div class="config_bar_item">
-        <span class="config_bar_label">Gewicht</span>
+        <span class="config_bar_label" data-i18n="conf_bar_gewicht">Gewicht</span>
         <span class="config_bar_value" id="bar_weight">8,40&thinsp;kg</span>
       </div>
       <div class="config_bar_sep" aria-hidden="true"></div>
       <div class="config_bar_item">
-        <span class="config_bar_label">CO2 indicatief</span>
+        <span class="config_bar_label" data-i18n="conf_bar_co2">CO2 indicatief</span>
         <span class="config_bar_value" id="bar_co2">75,0&thinsp;kg</span>
       </div>
       <div class="config_bar_sep" aria-hidden="true"></div>
       <div class="config_bar_item">
-        <span class="config_bar_label">Meerprijs opties</span>
+        <span class="config_bar_label" data-i18n="conf_bar_prijs">Meerprijs opties</span>
         <span class="config_bar_value" id="bar_price">basisopbouw</span>
       </div>
     </div>
-    <a class="cta config_bar_cta" href="#contact" id="bar_cta">Vraag deze opbouw aan</a>
+    <a class="cta config_bar_cta" href="#contact" id="bar_cta" data-i18n="conf_bar_cta">Vraag deze opbouw aan</a>
   </div>
 
   <footer class="site_footer">
     <p class="wordmark">MY LAST BIKE</p>
     <p><a href="mailto:info@mylastbike.nl" data-key-href="mailadres" data-key="mailadres">info@mylastbike.nl</a></p>
-    <p class="footer_note">Geassembleerd in Nederland · KvK volgt</p>
+    <p class="footer_note" data-i18n="footer_note">Geassembleerd in Nederland · KvK volgt</p>
   </footer>
 
   <script src="data.js"></script>
+  <script src="i18n.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

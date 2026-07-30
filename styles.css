@@ -83,7 +83,27 @@ h2 { font-size: clamp(1.9rem, 4.4vw, 3.4rem); }
   letter-spacing: 0.08em;
   text-decoration: none;
 }
-.site_header nav { display: flex; align-items: center; gap: clamp(0.75rem, 2.5vw, 2rem); }
+.site_header nav { display: flex; align-items: center; gap: clamp(0.75rem, 2.5vw, 2rem); flex: 1; }
+
+/* language toggle */
+.lang_switch { display: flex; align-items: center; gap: 0.3rem; margin-left: 0; flex-shrink: 0; }
+.lang_btn {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--ti_dark);
+  padding: 0.5rem 0.2rem;
+  min-height: 44px;
+  min-width: 2rem;
+  transition: color 160ms ease-out;
+}
+.lang_btn.is_active { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.lang_btn:hover { color: var(--ink); }
+.lang_sep { color: var(--ti_light); font-family: var(--mono); font-size: 0.72rem; line-height: 1; }
 .site_header nav a {
   font-family: var(--mono);
   font-size: 0.78rem;
