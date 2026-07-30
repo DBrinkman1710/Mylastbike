@@ -85,9 +85,35 @@
     document.getElementById("mode_shot_text").textContent = m.shotText;
     document.getElementById("mode_shot_file").textContent = m.shotFile;
 
-    modeImg.closest(".shot").classList.remove("missing");
-    modeImg.alt = m.alt;
-    modeImg.src = m.img;
+    const shot = modeImg.closest(".shot");
+
+    if (reduceMotion) {
+      shot.classList.remove("missing");
+      modeImg.alt = m.alt;
+      modeImg.src = m.img;
+      return;
+    }
+
+    // Pin old image as CSS background so no dark gap shows during the slide
+    shot.style.backgroundImage = "url(" + modeImg.src + ")";
+
+    // Slide old image out
+    modeImg.style.transform = "translateX(" + (dir === 1 ? "-105%" : "105%") + ")";
+
+    setTimeout(function () {
+      // Teleport img to opposite edge instantly
+      modeImg.style.transition = "none";
+      modeImg.style.transform = "translateX(" + (dir === 1 ? "105%" : "-105%") + ")";
+      modeImg.alt = m.alt;
+      modeImg.src = m.img;
+      shot.classList.remove("missing");
+      modeImg.offsetHeight;
+      // Slide new image in
+      modeImg.style.transition = "";
+      modeImg.style.transform = "translateX(0)";
+      // Clear background once new image has painted
+      modeImg.onload = function () { shot.style.backgroundImage = ""; };
+    }, 300);
   }
 
   if (switchEl) {
