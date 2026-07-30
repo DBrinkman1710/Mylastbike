@@ -34,7 +34,7 @@ window.SITE_DATA = {
   // en vervang JOUW_FORM_ID door de echte code.
   formspree: "https://formspree.io/f/JOUW_FORM_ID",
 
-  // Configurator — alle opties met prijs, gewicht en CO2 delta t.o.v. de basisoptie.
+  // Configurator — alleen de keuzes met echte impact staan als selectie.
   // De definitieve specificatie leggen we altijd samen vast tijdens het intakegesprek.
   // Prijzen zijn indicatief. CO2 cijfers zijn schattingen op basis van industrie LCA data. Eigen meting volgt.
   configurator: {
@@ -52,9 +52,7 @@ window.SITE_DATA = {
             prijs_delta: 0,
             gewicht_delta_g: 0,
             co2_delta_kg: 0,
-            standaard: true,
-            foto: "shots/config_groep_105.jpg",
-            foto_alt: "Shimano 105 Di2 groepenset"
+            standaard: true
           },
           {
             id: "centaur",
@@ -63,9 +61,7 @@ window.SITE_DATA = {
             prijs_delta: 0,
             gewicht_delta_g: 180,
             co2_delta_kg: -1.0,
-            standaard: false,
-            foto: "shots/config_groep_centaur.jpg",
-            foto_alt: "Campagnolo Centaur groepenset"
+            standaard: false
           },
           {
             id: "grx",
@@ -74,9 +70,7 @@ window.SITE_DATA = {
             prijs_delta: 150,
             gewicht_delta_g: 120,
             co2_delta_kg: 0.5,
-            standaard: false,
-            foto: "shots/config_groep_grx.jpg",
-            foto_alt: "Shimano GRX gravel groepenset"
+            standaard: false
           },
           {
             id: "ultegra",
@@ -85,9 +79,7 @@ window.SITE_DATA = {
             prijs_delta: 650,
             gewicht_delta_g: -90,
             co2_delta_kg: 2.0,
-            standaard: false,
-            foto: "shots/config_groep_ultegra.jpg",
-            foto_alt: "Shimano Ultegra Di2 groepenset"
+            standaard: false
           },
           {
             id: "super_record",
@@ -96,9 +88,7 @@ window.SITE_DATA = {
             prijs_delta: 2900,
             gewicht_delta_g: -420,
             co2_delta_kg: 6.0,
-            standaard: false,
-            foto: "shots/config_groep_superrecord.jpg",
-            foto_alt: "Campagnolo Super Record 13 groepenset"
+            standaard: false
           }
         ]
       },
@@ -113,9 +103,7 @@ window.SITE_DATA = {
             prijs_delta: 0,
             gewicht_delta_g: 0,
             co2_delta_kg: 0,
-            standaard: true,
-            foto: "shots/config_wiel_alu.jpg",
-            foto_alt: "Aluminium wielset"
+            standaard: true
           },
           {
             id: "carbon",
@@ -124,95 +112,25 @@ window.SITE_DATA = {
             prijs_delta: 1200,
             gewicht_delta_g: -450,
             co2_delta_kg: 18.4,
-            standaard: false,
-            foto: "shots/config_wiel_carbon.jpg",
-            foto_alt: "Carbon wielset"
+            standaard: false
           }
         ]
-      },
+      }
+    ],
+
+    // Vaste onderdelen: geen keuze, alleen een korte toelichting.
+    toelichting: [
       {
-        id: "stuur",
         naam: "Stuur",
-        opties: [
-          {
-            id: "carbon_int",
-            naam: "Carbon geïntegreerd",
-            omschrijving: "Eén cockpit, carbon en geïntegreerd met het frame. Geen kabels zichtbaar. Breedte en reach bepalen we op basis van jouw bikefit.",
-            prijs_delta: 0,
-            gewicht_delta_g: 0,
-            co2_delta_kg: 0,
-            standaard: true,
-            foto: "shots/config_stuur_carbon_int.jpg",
-            foto_alt: "Carbon geïntegreerd stuur"
-          }
-        ]
+        tekst: "Eén cockpit, carbon en geïntegreerd met het frame. Geen kabels zichtbaar. Breedte en reach bepalen we op basis van jouw bikefit."
       },
       {
-        id: "zadel",
         naam: "Zadel",
-        opties: [
-          {
-            id: "selle_italia",
-            naam: "Selle Italia",
-            omschrijving: "Ons standaard zadel: een neutrale Selle Italia. Tijdens de intake stemmen we het definitieve zadel op je af.",
-            prijs_delta: 0,
-            gewicht_delta_g: 0,
-            co2_delta_kg: 0,
-            standaard: true,
-            foto: "shots/config_zadel_selle.jpg",
-            foto_alt: "Selle Italia zadel"
-          },
-          {
-            id: "eigen",
-            naam: "Eigen zadel",
-            omschrijving: "Rijd je al jaren op je eigen zadel? Dan monteren wij dat, zonder meerprijs.",
-            prijs_delta: 0,
-            gewicht_delta_g: 0,
-            co2_delta_kg: 0,
-            standaard: false,
-            foto: "shots/config_zadel_eigen.jpg",
-            foto_alt: "Je eigen zadel"
-          }
-        ]
+        tekst: "Standaard een neutrale Selle Italia, of we monteren je eigen zadel. Tijdens de intake stemmen we het definitieve zadel op je af."
       },
       {
-        id: "banden",
         naam: "Banden",
-        opties: [
-          {
-            id: "road",
-            naam: "Road",
-            omschrijving: "Lage rolweerstand, snel op asfalt. Schwalbe of Continental.",
-            prijs_delta: 0,
-            gewicht_delta_g: 0,
-            co2_delta_kg: 0,
-            standaard: true,
-            foto: "shots/config_band_road.jpg",
-            foto_alt: "Road band, Schwalbe of Continental"
-          },
-          {
-            id: "gravel",
-            naam: "Gravel",
-            omschrijving: "Grip op grind en onverhard, voor bikepacking en alles buiten het asfalt. Schwalbe of Continental.",
-            prijs_delta: 40,
-            gewicht_delta_g: 220,
-            co2_delta_kg: 0.3,
-            standaard: false,
-            foto: "shots/config_band_gravel.jpg",
-            foto_alt: "Gravel band, Schwalbe of Continental"
-          },
-          {
-            id: "beide",
-            naam: "Beide sets",
-            omschrijving: "Twee bandensets: road en gravel. Wissel mee met je wielset en rijd beide werelden. Schwalbe of Continental.",
-            prijs_delta: 120,
-            gewicht_delta_g: 0,
-            co2_delta_kg: 1.0,
-            standaard: false,
-            foto: "shots/config_band_beide.jpg",
-            foto_alt: "Road en gravel bandensets"
-          }
-        ]
+        tekst: "Schwalbe of Continental, in road, gravel of beide sets. Welke bij jouw ritten past bespreken we tijdens de intake."
       }
     ]
   }

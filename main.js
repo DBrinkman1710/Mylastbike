@@ -168,12 +168,16 @@
     // Render full accordion once
     accordion.innerHTML = conf.categorieen.map(renderCategory).join("");
 
-    // Mark images missing if they 404
-    accordion.querySelectorAll(".config_option_shot img").forEach(function(img) {
-      function markMissing() { img.closest(".shot").classList.add("missing"); }
-      if (img.complete && img.naturalWidth === 0) markMissing();
-      img.addEventListener("error", markMissing);
-    });
+    // Render de vaste onderdelen als korte toelichting (geen keuze)
+    var explain = document.getElementById("config_explain");
+    if (explain && Array.isArray(conf.toelichting)) {
+      explain.innerHTML = conf.toelichting.map(function(t) {
+        return "<div class=\"config_explain_row\">" +
+          "<p class=\"config_explain_name\">" + t.naam + "</p>" +
+          "<p class=\"config_explain_text\">" + t.tekst + "</p>" +
+        "</div>";
+      }).join("");
+    }
 
     // Open first category
     var firstCat = accordion.querySelector(".config_cat");
@@ -294,14 +298,6 @@
       return "<button class=\"config_option" + (sel ? " is_selected" : "") + "\"" +
         " type=\"button\" data-cat=\"" + catId + "\" data-opt=\"" + opt.id + "\"" +
         " aria-pressed=\"" + sel + "\">" +
-        "<figure class=\"config_option_shot shot\">" +
-          "<img src=\"" + opt.foto + "\" alt=\"" + opt.foto_alt + "\" loading=\"lazy\">" +
-          "<figcaption class=\"shot_brief\">" +
-            "<span class=\"shot_num\">FOTO</span>" +
-            "<span>" + opt.foto_alt + "</span>" +
-            "<span>" + opt.foto + "</span>" +
-          "</figcaption>" +
-        "</figure>" +
         "<div class=\"config_option_body\">" +
           "<p class=\"config_option_name\">" + opt.naam + "</p>" +
           "<p class=\"config_option_desc\">" + opt.omschrijving + "</p>" +

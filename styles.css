@@ -477,8 +477,6 @@ section { padding-inline: var(--pad); }
 }
 .site_footer a { font-family: var(--mono); font-size: 0.9rem; text-decoration-color: var(--bronze_bright); }
 .footer_note { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--ti); }
-.footer_credits { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.04em; color: var(--ti); margin-top: 0.4rem; }
-.footer_credits a { font-size: 0.68rem; }
 
 /* ═══ responsief ═══ */
 @media (max-width: 860px) {
@@ -507,6 +505,36 @@ section { padding-inline: var(--pad); }
   color: var(--ti_dark);
 }
 .config_accordion { max-width: 68rem; }
+
+/* vaste onderdelen: korte toelichting, geen keuze */
+.config_explain { max-width: 68rem; margin-top: 2.5rem; }
+.config_explain_row {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--ti_light);
+}
+.config_explain_row:last-child { border-bottom: 1px solid var(--ti_light); }
+.config_explain_name {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.config_explain_text {
+  font-family: var(--body);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: var(--ti_dark);
+  max-width: var(--measure);
+}
+@media (max-width: 620px) {
+  .config_explain_row { grid-template-columns: 1fr; gap: 0.4rem; }
+}
 
 /* category row */
 .config_cat { border-top: 1px solid var(--ti_light); }
@@ -599,17 +627,6 @@ section { padding-inline: var(--pad); }
 .config_option:hover { border-color: var(--ti_dark); }
 .config_option.is_selected { border-color: var(--ink); }
 .config_option:focus-visible { outline: 2px solid var(--bronze); outline-offset: 2px; }
-
-/* option image */
-.config_option_shot {
-  aspect-ratio: 4 / 3;
-  width: 100%;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.config_option_shot img { width: 100%; height: 100%; object-fit: cover; transition: none; }
-.config_option_shot .shot_brief { padding: 0.6rem; font-size: 0.62rem; gap: 0.2rem; }
-.config_option_shot .shot_num { font-size: 0.62rem; }
 
 /* option text body */
 .config_option_body {
