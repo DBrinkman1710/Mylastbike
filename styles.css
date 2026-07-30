@@ -164,13 +164,14 @@ h2 { font-size: clamp(1.9rem, 4.4vw, 3.4rem); }
 /* ═══ manifest ═══ */
 .manifest { padding: clamp(5rem, 12vh, 9rem) var(--pad); max-width: 62rem; }
 .manifest_line {
-  font-size: clamp(1.45rem, 3.2vw, 2.3rem);
-  line-height: 1.35;
-  font-weight: 300;
-  text-wrap: balance;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1.65;
+  font-weight: 400;
+  text-wrap: pretty;
+  max-width: var(--measure);
 }
-.manifest_line + .manifest_line { margin-top: 2rem; }
-.manifest_line em, .manifest_line { font-style: italic; }
+.manifest_line + .manifest_line { margin-top: 1.4rem; }
+.manifest_line em { font-style: italic; }
 .manifest_rule {
   border: 0;
   border-top: 1px solid var(--ti_light);
