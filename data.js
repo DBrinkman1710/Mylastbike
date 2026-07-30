@@ -14,7 +14,7 @@ window.SITE_DATA = {
   co2_toelichting: "Zodra onze eerste meting er is, staat het getal hier. Niet eerder.",
 
   // Frame
-  bandenruimte_road: "tot 32 mm",
+  bandenruimte_road: "tot 45 mm",
   bandenruimte_gravel: "tot 45 mm",
   framegewicht: "volgt na weging",
   legering: "3Al/2.5V titanium",

@@ -85,33 +85,9 @@
     document.getElementById("mode_shot_text").textContent = m.shotText;
     document.getElementById("mode_shot_file").textContent = m.shotFile;
 
-    if (reduceMotion) {
-      modeImg.closest(".shot").classList.remove("missing");
-      modeImg.alt = m.alt;
-      modeImg.src = m.img;
-      return;
-    }
-
-    // Slide current image out in the direction of travel
-    modeImg.style.transform = "translateX(" + (dir === 1 ? "-105%" : "105%") + ")";
-    modeImg.style.opacity = "0";
-
-    setTimeout(function () {
-      // Teleport new image to opposite edge (no transition)
-      modeImg.style.transition = "none";
-      modeImg.style.transform = "translateX(" + (dir === 1 ? "105%" : "-105%") + ")";
-      modeImg.alt = m.alt;
-      modeImg.src = m.img;
-      modeImg.closest(".shot").classList.remove("missing");
-
-      // Force reflow so the instant move registers before re-enabling transition
-      modeImg.offsetHeight; // eslint-disable-line no-unused-expressions
-
-      // Slide in to centre
-      modeImg.style.transition = "";
-      modeImg.style.transform = "translateX(0)";
-      modeImg.style.opacity = "1";
-    }, 300);
+    modeImg.closest(".shot").classList.remove("missing");
+    modeImg.alt = m.alt;
+    modeImg.src = m.img;
   }
 
   if (switchEl) {
