@@ -109,6 +109,11 @@
     });
   }
 
+  // Initialise spec values from data.js so HTML defaults are never shown
+  document.querySelectorAll("[data-mode-field]").forEach(function (el) {
+    el.textContent = MODES.road[el.getAttribute("data-mode-field")] || "";
+  });
+
   // 5. Formulier: naar Formspree zodra een echt form id is ingesteld
   const form = document.getElementById("enquiry_form");
   const status = document.getElementById("form_status");
