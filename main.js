@@ -62,10 +62,16 @@
   const switchEl = document.querySelector(".mode_switch");
   const modeImg = document.getElementById("mode_img");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const modeOrder = ["road", "gravel"];
+  let currentMode = "road";
 
   function setMode(name) {
     const m = MODES[name];
     if (!m || !switchEl) return;
+
+    const dir = modeOrder.indexOf(name) > modeOrder.indexOf(currentMode) ? 1 : -1;
+    currentMode = name;
+
     switchEl.setAttribute("data-active", name);
     switchEl.querySelectorAll(".mode_btn").forEach(function (b) {
       const active = b.getAttribute("data-mode") === name;
@@ -79,18 +85,33 @@
     document.getElementById("mode_shot_text").textContent = m.shotText;
     document.getElementById("mode_shot_file").textContent = m.shotFile;
 
-    function swap() {
-      const shot = modeImg.closest(".shot");
-      shot.classList.remove("missing");
+    if (reduceMotion) {
+      modeImg.closest(".shot").classList.remove("missing");
       modeImg.alt = m.alt;
       modeImg.src = m.img;
-      if (!reduceMotion) modeImg.classList.remove("swapping");
+      return;
     }
-    if (reduceMotion) { swap(); }
-    else {
-      modeImg.classList.add("swapping");
-      setTimeout(swap, 220);
-    }
+
+    // Slide current image out in the direction of travel
+    modeImg.style.transform = "translateX(" + (dir === 1 ? "-105%" : "105%") + ")";
+    modeImg.style.opacity = "0";
+
+    setTimeout(function () {
+      // Teleport new image to opposite edge (no transition)
+      modeImg.style.transition = "none";
+      modeImg.style.transform = "translateX(" + (dir === 1 ? "105%" : "-105%") + ")";
+      modeImg.alt = m.alt;
+      modeImg.src = m.img;
+      modeImg.closest(".shot").classList.remove("missing");
+
+      // Force reflow so the instant move registers before re-enabling transition
+      modeImg.offsetHeight; // eslint-disable-line no-unused-expressions
+
+      // Slide in to centre
+      modeImg.style.transition = "";
+      modeImg.style.transform = "translateX(0)";
+      modeImg.style.opacity = "1";
+    }, 300);
   }
 
   if (switchEl) {
