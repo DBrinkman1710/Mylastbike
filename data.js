@@ -35,47 +35,70 @@ window.SITE_DATA = {
   formspree: "https://formspree.io/f/JOUW_FORM_ID",
 
   // Configurator — alle opties met prijs, gewicht en CO2 delta t.o.v. de basisoptie.
-  // CO2 cijfers zijn schattingen op basis van industrie LCA data. Eigen meting volgt.
+  // De definitieve specificatie leggen we altijd samen vast tijdens het intakegesprek.
+  // Prijzen zijn indicatief. CO2 cijfers zijn schattingen op basis van industrie LCA data. Eigen meting volgt.
   configurator: {
-    basis_gewicht_g: 8400,   // compleet gebouwde fiets met alle basisopties
+    basis_gewicht_g: 8200,   // compleet gebouwde fiets met alle basisopties
     basis_co2_kg: 75,         // indicatief
     categorieen: [
       {
-        id: "aandrijving",
-        naam: "Aandrijving",
+        id: "groepenset",
+        naam: "Groepenset",
         opties: [
           {
             id: "s105",
             naam: "Shimano 105 Di2",
-            omschrijving: "Elektronisch schakelen, betrouwbaar en breed te onderhouden",
+            omschrijving: "Elektronisch schakelen, 12 speed. Betrouwbaar en overal ter wereld te onderhouden.",
             prijs_delta: 0,
             gewicht_delta_g: 0,
             co2_delta_kg: 0,
             standaard: true,
-            foto: "shots/config_aandrijving_105.jpg",
-            foto_alt: "Shimano 105 Di2 schakelaar"
+            foto: "shots/config_groep_105.jpg",
+            foto_alt: "Shimano 105 Di2 groepenset"
+          },
+          {
+            id: "centaur",
+            naam: "Campagnolo Centaur",
+            omschrijving: "Mechanisch, 11 speed. Italiaans karakter en decennialang te onderhouden, zonder meerprijs.",
+            prijs_delta: 0,
+            gewicht_delta_g: 180,
+            co2_delta_kg: -1.0,
+            standaard: false,
+            foto: "shots/config_groep_centaur.jpg",
+            foto_alt: "Campagnolo Centaur groepenset"
+          },
+          {
+            id: "grx",
+            naam: "Shimano GRX",
+            omschrijving: "Gravel specifiek. Extra grip op de shifters en een clutch derailleur voor onverhard.",
+            prijs_delta: 150,
+            gewicht_delta_g: 120,
+            co2_delta_kg: 0.5,
+            standaard: false,
+            foto: "shots/config_groep_grx.jpg",
+            foto_alt: "Shimano GRX gravel groepenset"
           },
           {
             id: "ultegra",
             naam: "Shimano Ultegra Di2",
-            omschrijving: "Nauwere toleranties, fijner schakelen, 95 gram lichter",
-            prijs_delta: 480,
-            gewicht_delta_g: -95,
-            co2_delta_kg: 5.2,
+            omschrijving: "Nauwere toleranties, fijner schakelen en lichter dan 105.",
+            prijs_delta: 650,
+            gewicht_delta_g: -90,
+            co2_delta_kg: 2.0,
             standaard: false,
-            foto: "shots/config_aandrijving_ultegra.jpg",
-            foto_alt: "Shimano Ultegra Di2 schakelaar"
+            foto: "shots/config_groep_ultegra.jpg",
+            foto_alt: "Shimano Ultegra Di2 groepenset"
           },
           {
-            id: "sram_force",
-            naam: "SRAM Force AXS",
-            omschrijving: "Draadloos, 12-speed, uitstekend inzetbaar op road en gravel",
-            prijs_delta: 720,
-            gewicht_delta_g: -130,
-            co2_delta_kg: 6.8,
+            id: "super_record",
+            naam: "Campagnolo Super Record 13",
+            omschrijving: "Draadloos, 13 speed. Een van de lichtste elektronische groepensets ter wereld, het absolute topsegment.",
+            prijs_delta: 2900,
+            gewicht_delta_g: -420,
+            co2_delta_kg: 6.0,
             standaard: false,
-            foto: "shots/config_aandrijving_sram.jpg",
-            foto_alt: "SRAM Force AXS derailleur"
+            foto: "shots/config_groep_superrecord.jpg",
+            foto_alt: "Campagnolo Super Record 13 groepenset"
           }
         ]
       },
@@ -84,65 +107,71 @@ window.SITE_DATA = {
         naam: "Wielset",
         opties: [
           {
-            id: "alloy_30",
-            naam: "Aluminium 30mm",
-            omschrijving: "Sterk, onderhoudsvriendelijk en duurzamer te produceren dan carbon",
+            id: "alu",
+            naam: "Aluminium",
+            omschrijving: "Sterk, onderhoudsvriendelijk en duurzamer te produceren. Road of allroad. Merken: DT Swiss of Mavic.",
             prijs_delta: 0,
             gewicht_delta_g: 0,
             co2_delta_kg: 0,
             standaard: true,
-            foto: "shots/config_wielset_alloy.jpg",
+            foto: "shots/config_wiel_alu.jpg",
             foto_alt: "Aluminium wielset"
           },
           {
-            id: "carbon_35",
-            naam: "Carbon 35mm",
-            omschrijving: "Aanzienlijk lichter en stijver. Hogere CO2 bij productie",
-            prijs_delta: 1100,
-            gewicht_delta_g: -420,
+            id: "carbon",
+            naam: "Carbon",
+            omschrijving: "Aanzienlijk lichter en stijver. Road of allroad. Merken: Scope, DT Swiss of Mavic.",
+            prijs_delta: 1200,
+            gewicht_delta_g: -450,
             co2_delta_kg: 18.4,
             standaard: false,
-            foto: "shots/config_wielset_carbon35.jpg",
-            foto_alt: "Carbon 35mm wielset"
-          },
-          {
-            id: "carbon_50",
-            naam: "Carbon 50mm",
-            omschrijving: "Maximum aerodynamica op vlak terrein, gevoeliger voor crosswind",
-            prijs_delta: 1600,
-            gewicht_delta_g: -380,
-            co2_delta_kg: 22.1,
-            standaard: false,
-            foto: "shots/config_wielset_carbon50.jpg",
-            foto_alt: "Carbon 50mm wielset"
+            foto: "shots/config_wiel_carbon.jpg",
+            foto_alt: "Carbon wielset"
           }
         ]
       },
       {
         id: "stuur",
-        naam: "Stuur en stam",
+        naam: "Stuur",
         opties: [
           {
-            id: "alu_compact",
-            naam: "Aluminium compact",
-            omschrijving: "Comfortabel voor lange dagen, eenvoudig aan te passen",
+            id: "carbon_int",
+            naam: "Carbon geïntegreerd",
+            omschrijving: "Eén cockpit, carbon en geïntegreerd met het frame. Geen kabels zichtbaar. Breedte en reach bepalen we op basis van jouw bikefit.",
             prijs_delta: 0,
             gewicht_delta_g: 0,
             co2_delta_kg: 0,
             standaard: true,
-            foto: "shots/config_stuur_alu.jpg",
-            foto_alt: "Aluminium compact stuur"
+            foto: "shots/config_stuur_carbon_int.jpg",
+            foto_alt: "Carbon geïntegreerd stuur"
+          }
+        ]
+      },
+      {
+        id: "zadel",
+        naam: "Zadel",
+        opties: [
+          {
+            id: "selle_italia",
+            naam: "Selle Italia",
+            omschrijving: "Ons standaard zadel: een neutrale Selle Italia. Tijdens de intake stemmen we het definitieve zadel op je af.",
+            prijs_delta: 0,
+            gewicht_delta_g: 0,
+            co2_delta_kg: 0,
+            standaard: true,
+            foto: "shots/config_zadel_selle.jpg",
+            foto_alt: "Selle Italia zadel"
           },
           {
-            id: "carbon_compact",
-            naam: "Carbon compact",
-            omschrijving: "Dezelfde handling, lager gewicht en betere trillingsabsorptie",
-            prijs_delta: 280,
-            gewicht_delta_g: -180,
-            co2_delta_kg: 3.2,
+            id: "eigen",
+            naam: "Eigen zadel",
+            omschrijving: "Rijd je al jaren op je eigen zadel? Dan monteren wij dat, zonder meerprijs.",
+            prijs_delta: 0,
+            gewicht_delta_g: 0,
+            co2_delta_kg: 0,
             standaard: false,
-            foto: "shots/config_stuur_carbon.jpg",
-            foto_alt: "Carbon compact stuur"
+            foto: "shots/config_zadel_eigen.jpg",
+            foto_alt: "Je eigen zadel"
           }
         ]
       },
@@ -151,76 +180,37 @@ window.SITE_DATA = {
         naam: "Banden",
         opties: [
           {
-            id: "road_28",
-            naam: "28c Road",
-            omschrijving: "Lage rolweerstand, snel op droog asfalt",
-            prijs_delta: 0,
-            gewicht_delta_g: -85,
-            co2_delta_kg: -0.2,
-            standaard: false,
-            foto: "shots/config_banden_road.jpg",
-            foto_alt: "28c road band"
-          },
-          {
-            id: "allround_32",
-            naam: "32c All-round",
-            omschrijving: "De meest veelzijdige keuze: asfalt en licht onverhard",
+            id: "road",
+            naam: "Road",
+            omschrijving: "Lage rolweerstand, snel op asfalt. Schwalbe of Continental.",
             prijs_delta: 0,
             gewicht_delta_g: 0,
             co2_delta_kg: 0,
             standaard: true,
-            foto: "shots/config_banden_allround.jpg",
-            foto_alt: "32c all-round band"
+            foto: "shots/config_band_road.jpg",
+            foto_alt: "Road band, Schwalbe of Continental"
           },
           {
-            id: "gravel_45",
-            naam: "45c Gravel",
-            omschrijving: "Grindpaden, bikepacking, alles buiten het asfalt",
-            prijs_delta: 30,
+            id: "gravel",
+            naam: "Gravel",
+            omschrijving: "Grip op grind en onverhard, voor bikepacking en alles buiten het asfalt. Schwalbe of Continental.",
+            prijs_delta: 40,
             gewicht_delta_g: 220,
             co2_delta_kg: 0.3,
             standaard: false,
-            foto: "shots/config_banden_gravel.jpg",
-            foto_alt: "45c gravel band"
-          }
-        ]
-      },
-      {
-        id: "afwerking",
-        naam: "Afwerking",
-        opties: [
-          {
-            id: "geborsteld",
-            naam: "Geborsteld titanium",
-            omschrijving: "Het metaal op zijn eerlijkst. Krassen poets je weg",
-            prijs_delta: 0,
-            gewicht_delta_g: 0,
-            co2_delta_kg: 0,
-            standaard: true,
-            foto: "shots/config_finish_geborsteld.jpg",
-            foto_alt: "Geborsteld titanium frame"
+            foto: "shots/config_band_gravel.jpg",
+            foto_alt: "Gravel band, Schwalbe of Continental"
           },
           {
-            id: "anodized_zwart",
-            naam: "Anodized zwart",
-            omschrijving: "Diep mat zwart, geanodiseerd zodat er geen lak bladdert",
-            prijs_delta: 220,
+            id: "beide",
+            naam: "Beide sets",
+            omschrijving: "Twee bandensets: road en gravel. Wissel mee met je wielset en rijd beide werelden. Schwalbe of Continental.",
+            prijs_delta: 120,
             gewicht_delta_g: 0,
-            co2_delta_kg: 1.1,
+            co2_delta_kg: 1.0,
             standaard: false,
-            foto: "shots/config_finish_zwart.jpg",
-            foto_alt: "Zwart geanodiseerd frame"
-          },
-          {
-            id: "anodized_bronze",
-            naam: "Anodized bronze",
-            omschrijving: "Warme brons tint die de lasnaad benadrukt",
-            prijs_delta: 220,
-            gewicht_delta_g: 0,
-            co2_delta_kg: 1.1,
-            standaard: false,
-            foto: "shots/config_finish_bronze.jpg",
-            foto_alt: "Bronze geanodiseerd frame"
+            foto: "shots/config_band_beide.jpg",
+            foto_alt: "Road en gravel bandensets"
           }
         ]
       }

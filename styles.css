@@ -409,7 +409,14 @@ section { padding-inline: var(--pad); }
   color: var(--ti_dark);
   letter-spacing: 0.02em;
 }
-.prijs_note { margin-top: 1.8rem; font-style: italic; max-width: var(--measure); }
+.prijs_incl {
+  margin-top: 1.8rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--bronze);
+  max-width: var(--measure);
+  color: var(--ti_dark);
+}
+.prijs_note { margin-top: 1.2rem; font-style: italic; max-width: var(--measure); }
 
 /* ═══ contact ═══ */
 .contact { padding-block: clamp(4rem, 10vh, 7rem); }
@@ -470,6 +477,8 @@ section { padding-inline: var(--pad); }
 }
 .site_footer a { font-family: var(--mono); font-size: 0.9rem; text-decoration-color: var(--bronze_bright); }
 .footer_note { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--ti); }
+.footer_credits { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.04em; color: var(--ti); margin-top: 0.4rem; }
+.footer_credits a { font-size: 0.68rem; }
 
 /* ═══ responsief ═══ */
 @media (max-width: 860px) {
@@ -489,6 +498,13 @@ section { padding-inline: var(--pad); }
   max-width: var(--measure);
   margin: -0.5rem 0 3rem;
   font-style: italic;
+}
+.config_intro_intake {
+  margin: -1.6rem 0 3rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--bronze);
+  font-style: normal;
+  color: var(--ti_dark);
 }
 .config_accordion { max-width: 68rem; }
 
