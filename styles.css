@@ -189,6 +189,45 @@ h2 { font-size: clamp(1.9rem, 4.4vw, 3.4rem); }
 }
 .manifest_line.small + .manifest_line.small { margin-top: 1rem; }
 
+/* ═══ triptych ═══ */
+.triptych {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.triptych_panel {
+  position: relative;
+  height: clamp(380px, 60vh, 640px);
+  overflow: hidden;
+}
+.triptych_panel img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 700ms ease-out;
+  display: block;
+}
+.triptych_panel:hover img { transform: scale(1.04); }
+.triptych_panel::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,12,13,0.72) 0%, rgba(10,12,13,0.15) 55%, transparent 100%);
+  pointer-events: none;
+}
+.triptych_word {
+  position: absolute;
+  bottom: 1.8rem;
+  left: 2rem;
+  z-index: 1;
+  font-family: var(--display);
+  font-weight: 800;
+  font-stretch: 125%;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  color: #FFFFFF;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  user-select: none;
+}
+
 /* ═══ secties algemeen ═══ */
 section { padding-inline: var(--pad); }
 .section_head { margin-bottom: 2.5rem; max-width: 52rem; }
@@ -432,6 +471,8 @@ section { padding-inline: var(--pad); }
 
 /* ═══ responsief ═══ */
 @media (max-width: 860px) {
+  .triptych { grid-template-columns: 1fr; }
+  .triptych_panel { height: clamp(240px, 50vw, 360px); }
   .fiets_grid, .materiaal_grid, .duurzaam_grid { grid-template-columns: 1fr; }
   .form_row { grid-template-columns: 1fr; gap: 0; }
   .prijs_cards { grid-template-columns: 1fr; }
