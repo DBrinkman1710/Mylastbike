@@ -71,7 +71,7 @@ h2 { font-size: clamp(1.9rem, 4.4vw, 3.4rem); }
   position: sticky; top: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   gap: 1rem;
-  padding: 0.9rem var(--pad);
+  padding: 0.4rem var(--pad);
   background: var(--paper);
   border-bottom: 1px solid var(--ti_light);
 }
@@ -87,15 +87,10 @@ h2 { font-size: clamp(1.9rem, 4.4vw, 3.4rem); }
   gap: 0.55rem;
 }
 .wordmark_icon {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 2rem;
-  line-height: 1;
+  width: 3rem;
+  height: 3rem;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #C7CBCD 0%, #878E94 50%, #3E4347 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: block;
 }
 .site_header nav { display: flex; align-items: center; gap: clamp(0.75rem, 2.5vw, 2rem); margin-left: auto; }
 .site_header nav a {
