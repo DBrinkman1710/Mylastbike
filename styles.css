@@ -86,7 +86,7 @@ h2 { font-size: clamp(1.9rem, 4.4vw, 3.4rem); }
   align-items: center;
   gap: 0.55rem;
 }
-.wordmark_icon { width: 26px; height: 26px; flex-shrink: 0; }
+.wordmark_icon { width: 1em; height: 1em; flex-shrink: 0; display: block; overflow: visible; }
 .site_header nav { display: flex; align-items: center; gap: clamp(0.75rem, 2.5vw, 2rem); margin-left: auto; }
 .site_header nav a {
   font-family: var(--mono);
