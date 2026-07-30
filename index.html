@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Last Bike · Eén titanium frame voor de rest van je leven</title>
+  <meta name="description" content="Eén titanium frame dat racefiets en gravelbike is. Geassembleerd in Nederland. Gebouwd om je laatste fiets te zijn.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site_header">
+    <a class="wordmark" href="#top">MY LAST BIKE</a>
+    <nav aria-label="Hoofdnavigatie">
+      <a href="#fiets">De fiets</a>
+      <a href="#materiaal">Materiaal</a>
+      <a href="#geometrie">Geometrie</a>
+      <a href="#configurator">Bouw</a>
+      <a href="#prijs">Prijs</a>
+      <a class="nav_cta" href="#contact">Aanvragen</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero">
+      <figure class="shot hero_shot">
+        <img src="shots/shot_01_hero.jpg" alt="De fiets, volledig zijaanzicht in het landschap">
+        <figcaption class="shot_brief">
+          <span class="shot_num">FOTO 01</span>
+          <span>Hele fiets in het landschap, zijaanzicht, daglicht</span>
+          <span>Liggend, minimaal 2400 px breed · bestand: shots/shot_01_hero.jpg</span>
+        </figcaption>
+      </figure>
+      <div class="hero_text">
+        <p class="eyebrow">TITANIUM · ROAD · GRAVEL · NEDERLAND</p>
+        <h1>Je laatste<br>fiets.</h1>
+        <p class="hero_sub">Eén titanium frame dat racefiets en gravelbike is. Gebouwd om elke fiets na deze overbodig te maken.</p>
+        <a class="cta" href="#contact">Vraag het frame aan</a>
+      </div>
+    </section>
+
+    <!-- ══════════ MANIFEST ══════════ -->
+    <section class="manifest">
+      <p class="manifest_line">Titanium roest niet, vermoeit nauwelijks en heeft geen lak nodig. Een goed gebouwd frame gaat langer mee dan de trends die erop volgen.</p>
+      <p class="manifest_line small">Daarom bouwen we er precies één. Geen jaargangen. Geen collecties. Geen opvolger.</p>
+    </section>
+
+    <!-- ══════════ DE FIETS + TOGGLE ══════════ -->
+    <section class="fiets" id="fiets">
+      <div class="section_head">
+        <p class="eyebrow">HET FRAME</p>
+        <h2>Eén frame, twee fietsen</h2>
+      </div>
+
+      <div class="mode_switch" role="group" aria-label="Kies opzet">
+        <button type="button" class="mode_btn is_active" data-mode="road" aria-pressed="true">ROAD</button>
+        <button type="button" class="mode_btn" data-mode="gravel" aria-pressed="false">GRAVEL</button>
+        <span class="mode_indicator" aria-hidden="true"></span>
+      </div>
+
+      <div class="fiets_grid">
+        <figure class="shot fiets_shot">
+          <img id="mode_img" src="shots/shot_02_road.jpg" alt="De fiets in road opzet, zijaanzicht">
+          <figcaption class="shot_brief">
+            <span class="shot_num" id="mode_shot_num">FOTO 02</span>
+            <span id="mode_shot_text">Zijaanzicht in road opzet, strakke achtergrond</span>
+            <span id="mode_shot_file">Verhouding 3:2 · bestand: shots/shot_02_road.jpg</span>
+          </figcaption>
+        </figure>
+
+        <dl class="spec_list">
+          <div class="spec_row">
+            <dt>Bandenruimte</dt>
+            <dd data-mode-field="bandenruimte">tot 32 mm</dd>
+          </div>
+          <div class="spec_row">
+            <dt>Opzet</dt>
+            <dd data-mode-field="opzet">Snel op asfalt, lange trainingen, wedstrijden</dd>
+          </div>
+          <div class="spec_row">
+            <dt>Wissel</dt>
+            <dd data-mode-field="wissel">Ander wielset erin en je staat op gravel</dd>
+          </div>
+          <div class="spec_row">
+            <dt>Legering</dt>
+            <dd data-key="legering">3Al/2.5V titanium</dd>
+          </div>
+          <div class="spec_row">
+            <dt>Framegewicht</dt>
+            <dd data-key="framegewicht">volgt na weging</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ══════════ MATERIAAL ══════════ -->
+    <section class="materiaal" id="materiaal">
+      <div class="materiaal_grid">
+        <div class="materiaal_text">
+          <p class="eyebrow">MATERIAAL</p>
+          <h2>Geborsteld titanium, geen lak</h2>
+          <p>Het frame is gebouwd uit 3Al/2.5V titanium buizen en wordt geassembleerd in Nederland. De lasnaden blijven zichtbaar. De afwerking is geborsteld metaal, dus krassen poets je weg in plaats van dat je ze overspuit.</p>
+          <ul class="fact_list">
+            <li><span>Legering</span><span data-key="legering">3Al/2.5V titanium</span></li>
+            <li><span>Afwerking</span><span>Geborsteld, ongelakt</span></li>
+            <li><span>Assemblage</span><span>Nederland</span></li>
+            <li><span>Remmen</span><span>Vlakke montage schijfrem</span></li>
+          </ul>
+        </div>
+        <figure class="shot weld_shot">
+          <img src="shots/shot_04_lasnaad.jpg" alt="Macro van een lasnaad op het titanium frame">
+          <figcaption class="shot_brief">
+            <span class="shot_num">FOTO 04</span>
+            <span>Macro van een lasnaad, bijvoorbeeld bij de balhoofdbuis</span>
+            <span>Vierkant 1:1 · bestand: shots/shot_04_lasnaad.jpg</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ══════════ GEOMETRIE (donker) ══════════ -->
+    <section class="geometrie" id="geometrie">
+      <div class="section_head">
+        <p class="eyebrow">GEOMETRIE</p>
+        <h2>Jouw maat komt van een bikefitter, niet uit een dropdown</h2>
+      </div>
+      <p class="geometrie_intro">We bouwen aan een netwerk van bikefitters in Nederland. Zij meten je op voordat je bestelt, en die meting bepaalt je maat en afbouw. De volledige geometrietabel staat hier zodra de eerste meetronde is afgerond.</p>
+      <table class="geo_table">
+        <caption class="visually_hidden">Geometrietabel per framemaat</caption>
+        <thead>
+          <tr><th scope="col">Maat</th><th scope="col">Stack</th><th scope="col">Reach</th><th scope="col">Zitbuishoek</th><th scope="col">Balhoofdhoek</th></tr>
+        </thead>
+        <tbody id="geo_body">
+          <!-- rijen komen uit data.js -->
+        </tbody>
+      </table>
+      <figure class="shot detail_shot">
+        <img src="shots/shot_05_detail.jpg" alt="Detail van de achtervork en dropout">
+        <figcaption class="shot_brief">
+          <span class="shot_num">FOTO 05</span>
+          <span>Detail van achtervork of dropout, schuin van achteren</span>
+          <span>Staand 4:5 · bestand: shots/shot_05_detail.jpg</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ══════════ CONFIGURATOR ══════════ -->
+    <section class="configurator" id="configurator">
+      <div class="section_head">
+        <p class="eyebrow">STEL JE FIETS SAMEN</p>
+        <h2>Kies jouw opbouw</h2>
+      </div>
+      <p class="config_intro">Elk frame wordt gebouwd met de onderdelen die passen bij jouw gebruik. Selecteer hieronder jouw voorkeur. De meerprijs, het gewicht en de CO2 impact van elke keuze staan er direct bij. CO2 cijfers zijn indicatief op basis van industrie data — eigen meting volgt.</p>
+      <div class="config_accordion" id="config_accordion">
+        <!-- gegenereerd via JS vanuit data.js -->
+      </div>
+    </section>
+
+    <!-- ══════════ DUURZAAMHEID ══════════ -->
+    <section class="duurzaam" id="duurzaam">
+      <p class="eyebrow">EERLIJK OVER CO2</p>
+      <h2>Wat we nog niet weten, claimen we niet</h2>
+      <div class="duurzaam_grid">
+        <div>
+          <p class="duurzaam_stat" data-key="co2_status">nog geen gemeten cijfers</p>
+          <p class="duurzaam_label">CO2 voetafdruk per frame</p>
+        </div>
+        <div class="duurzaam_text">
+          <p data-key="co2_toelichting">Zodra onze eerste meting er is, staat het getal hier. Niet eerder.</p>
+          <p>De duurzaamste fiets is er één die je nooit hoeft te vervangen. Daarnaast onderzoeken we partnerschappen met carbon credit fondsen om de voetafdruk van elk frame te compenseren. Zodra dat rond is, lees je hier precies hoe het werkt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PRIJS ══════════ -->
+    <section class="prijs" id="prijs">
+      <div class="prijs_cards">
+        <div class="prijs_card">
+          <p class="prijs_label">Prijs frameset</p>
+          <p class="prijs_value" data-key="prijs">wordt nog bepaald</p>
+        </div>
+        <div class="prijs_card">
+          <p class="prijs_label">Levertijd</p>
+          <p class="prijs_value" data-key="levertijd">wordt nog bepaald</p>
+        </div>
+      </div>
+      <p class="prijs_note">Serieuze interesse? Laat je gegevens achter, dan hoor je de prijs als eerste.</p>
+    </section>
+
+    <!-- ══════════ CONTACT ══════════ -->
+    <section class="contact" id="contact">
+      <div class="section_head">
+        <p class="eyebrow">AANVRAGEN</p>
+        <h2>Begin met een gesprek</h2>
+      </div>
+      <p class="contact_intro">Geen winkelmandje. Je laat je gegevens achter, wij nemen contact op en plannen een meting met een bikefitter bij jou in de buurt.</p>
+      <form id="enquiry_form" method="POST">
+        <div class="form_row">
+          <div class="field">
+            <label for="f_naam">Naam</label>
+            <input id="f_naam" name="naam" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f_mail">Mailadres</label>
+            <input id="f_mail" name="mailadres" type="email" autocomplete="email" required>
+          </div>
+        </div>
+        <fieldset class="field">
+          <legend>Waar ga je vooral rijden?</legend>
+          <div class="radio_row">
+            <label class="radio"><input type="radio" name="opzet" value="road" required><span>Road</span></label>
+            <label class="radio"><input type="radio" name="opzet" value="gravel"><span>Gravel</span></label>
+            <label class="radio"><input type="radio" name="opzet" value="beide"><span>Beide</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="f_bericht">Vertel kort over jezelf en je huidige fiets <span class="optional">(optioneel)</span></label>
+          <textarea id="f_bericht" name="bericht" rows="4"></textarea>
+        </div>
+        <button class="cta" type="submit">Verstuur aanvraag</button>
+        <p class="form_status" id="form_status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <div class="config_bar" id="config_bar" role="region" aria-label="Opbouw samenvatting">
+    <div class="config_bar_specs">
+      <div class="config_bar_item">
+        <span class="config_bar_label">Gewicht</span>
+        <span class="config_bar_value" id="bar_weight">8,40&thinsp;kg</span>
+      </div>
+      <div class="config_bar_sep" aria-hidden="true"></div>
+      <div class="config_bar_item">
+        <span class="config_bar_label">CO2 indicatief</span>
+        <span class="config_bar_value" id="bar_co2">75,0&thinsp;kg</span>
+      </div>
+      <div class="config_bar_sep" aria-hidden="true"></div>
+      <div class="config_bar_item">
+        <span class="config_bar_label">Meerprijs opties</span>
+        <span class="config_bar_value" id="bar_price">basisopbouw</span>
+      </div>
+    </div>
+    <a class="cta config_bar_cta" href="#contact" id="bar_cta">Vraag deze opbouw aan</a>
+  </div>
+
+  <footer class="site_footer">
+    <p class="wordmark">MY LAST BIKE</p>
+    <p><a href="mailto:info@mylastbike.nl" data-key-href="mailadres" data-key="mailadres">info@mylastbike.nl</a></p>
+    <p class="footer_note">Geassembleerd in Nederland · KvK volgt</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
