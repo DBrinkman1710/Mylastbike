@@ -21,12 +21,19 @@
       <a href="#configurator" data-i18n="nav_bouw">Bouw</a>
       <a href="#prijs" data-i18n="nav_prijs">Prijs</a>
       <a class="nav_cta" href="#contact" data-i18n="nav_aanvragen">Aanvragen</a>
+      <div class="lang_drop">
+        <button class="lang_trigger" type="button" id="lang_trigger" aria-haspopup="listbox" aria-expanded="false">
+          <span id="lang_current">NL</span>
+          <svg class="lang_chevron" aria-hidden="true" width="8" height="5" viewBox="0 0 8 5" fill="none">
+            <path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="lang_menu" role="listbox" aria-label="Taal / Language">
+          <button class="lang_opt is_active" data-lang="nl" role="option" aria-selected="true">Nederlands</button>
+          <button class="lang_opt" data-lang="en" role="option" aria-selected="false">English</button>
+        </div>
+      </div>
     </nav>
-    <div class="lang_switch" role="group" aria-label="Taal / Language">
-      <button class="lang_btn is_active" data-lang="nl" aria-pressed="true">NL</button>
-      <span class="lang_sep" aria-hidden="true">·</span>
-      <button class="lang_btn" data-lang="en" aria-pressed="false">EN</button>
-    </div>
   </header>
 
   <main id="top">

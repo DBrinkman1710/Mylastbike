@@ -391,10 +391,12 @@
       if (dict && dict[key] !== undefined) el.textContent = dict[key];
     });
 
-    document.querySelectorAll(".lang_btn").forEach(function (btn) {
-      var active = btn.getAttribute("data-lang") === lang;
-      btn.classList.toggle("is_active", active);
-      btn.setAttribute("aria-pressed", String(active));
+    var trigger = document.getElementById("lang_current");
+    if (trigger) trigger.textContent = lang.toUpperCase();
+    document.querySelectorAll(".lang_opt").forEach(function (opt) {
+      var active = opt.getAttribute("data-lang") === lang;
+      opt.classList.toggle("is_active", active);
+      opt.setAttribute("aria-selected", String(active));
     });
 
     renderGeoTable();
@@ -402,9 +404,9 @@
     renderConfigurator();
   }
 
-  document.querySelectorAll(".lang_btn").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      applyLanguage(btn.getAttribute("data-lang"));
+  document.querySelectorAll(".lang_opt").forEach(function (opt) {
+    opt.addEventListener("click", function () {
+      applyLanguage(opt.getAttribute("data-lang"));
     });
   });
 
