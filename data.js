@@ -28,7 +28,7 @@ window.SITE_DATA = {
   ],
 
   // Contact
-  mailadres: "info@mylastbike.nl",
+  mailadres: "info@mylastbike.com",
 
   // Formspree endpoint: maak een gratis form aan op formspree.io
   // en vervang JOUW_FORM_ID door de echte code.

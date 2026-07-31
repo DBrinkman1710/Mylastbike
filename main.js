@@ -124,7 +124,7 @@
     form.addEventListener("submit", function (e) {
       if (!configured) {
         e.preventDefault();
-        status.textContent = "Formulier nog niet gekoppeld. Mail ons op " + (D.mailadres || "info@mylastbike.nl");
+        status.textContent = "Formulier nog niet gekoppeld. Mail ons op " + (D.mailadres || "info@mylastbike.com");
         return;
       }
       e.preventDefault();
