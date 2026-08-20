@@ -423,12 +423,14 @@ section { padding-inline: var(--pad); }
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 4rem);
-  align-items: start;
+  align-items: stretch;
   padding-inline: var(--pad);
   padding-block: clamp(4rem, 10vh, 7rem);
 }
 .contact_updates > .contact,
 .contact_updates > .updates { padding: 0; }
+.contact_updates > .updates { display: flex; }
+.contact_updates > .updates > .updates_inner { flex: 1; max-width: none; }
 
 /* ═══ contact ═══ */
 .contact { padding-block: clamp(4rem, 10vh, 7rem); }
