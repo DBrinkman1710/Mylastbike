@@ -35,7 +35,7 @@ window.SITE_DATA = {
   //   Instellingen → Workspace → Enquiry form snippet (de code in /public/lead/<slug>).
   // yippie_stage_* moeten exact overeenkomen met de Kanban stagenamen in Yippie.
   yippie_api: "https://app.getyippie.com/api/v1/public/lead/",
-  yippie_slug: "JOUW_SLUG",
+  yippie_slug: "my-last-bike",
   yippie_stage_aanvraag: "Aanvragen",
   yippie_stage_interesse: "Interesse",
 
