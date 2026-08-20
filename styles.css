@@ -418,27 +418,13 @@ section { padding-inline: var(--pad); }
 }
 .prijs_note { margin-top: 1.2rem; font-style: italic; max-width: var(--measure); }
 
-/* ═══ contact + nieuwsbrief naast elkaar ═══ */
-.contact_updates {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: stretch;
-  padding-inline: var(--pad);
-  padding-block: clamp(4rem, 10vh, 7rem);
-}
-.contact_updates > .contact,
-.contact_updates > .updates { padding: 0; }
-.contact_updates > .updates { display: flex; }
-.contact_updates > .updates > .updates_inner {
-  flex: 1; max-width: none;
-  display: flex; flex-direction: column; justify-content: center;
-}
-
 /* ═══ contact ═══ */
 .contact { padding-block: clamp(4rem, 10vh, 7rem); }
 .contact_intro { max-width: var(--measure); margin: -0.5rem 0 2rem; }
-#enquiry_form { max-width: 44rem; }
+#enquiry_form { max-width: none; }
+.button_row { display: flex; flex-wrap: wrap; gap: 1rem; }
+.cta_alt { background: transparent; color: var(--ink); border-color: var(--ti_dark); }
+.cta_alt:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .form_row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -485,21 +471,6 @@ section { padding-inline: var(--pad); }
 
 .form_status { margin-top: 1rem; font-family: var(--mono); font-size: 0.82rem; color: var(--bronze); }
 
-/* ═══ blijf op de hoogte ═══ */
-.updates { padding-block: clamp(3rem, 7vh, 5rem); }
-.updates_inner {
-  background: var(--paper_2);
-  border: 1px solid var(--ti_light);
-  border-top: 2px solid var(--ti_dark);
-  padding: clamp(2rem, 5vw, 3rem);
-  max-width: 52rem;
-}
-.updates_head { margin-bottom: 2rem; }
-.updates_head h2 { margin-top: 0.4rem; }
-.updates_intro { max-width: var(--measure); margin-top: 1rem; }
-.updates_form .form_row { margin-bottom: 1.5rem; }
-.updates_form .field { margin-bottom: 0; }
-
 /* ═══ footer ═══ */
 .site_footer {
   background: var(--night);
@@ -515,7 +486,6 @@ section { padding-inline: var(--pad); }
   .triptych { grid-template-columns: 1fr; }
   .triptych_panel { height: clamp(240px, 50vw, 360px); }
   .fiets_grid, .materiaal_grid, .duurzaam_grid { grid-template-columns: 1fr; }
-  .contact_updates { grid-template-columns: 1fr; gap: clamp(2.5rem, 8vw, 4rem); }
   .form_row { grid-template-columns: 1fr; gap: 0; }
   .prijs_cards { grid-template-columns: 1fr; }
   .site_header nav a:not(.nav_cta) { display: none; }

@@ -167,19 +167,23 @@
     });
   }
 
-  // 5b. Blijf op de hoogte → Kanban stage "Interesse"
-  const updatesForm = document.getElementById("updates_form");
-  const updatesStatus = document.getElementById("updates_status");
-  if (updatesForm && updatesStatus) {
-    updatesForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const data = new FormData(updatesForm);
+  // 5b. Houd me op de hoogte → Kanban stage "Interesse" (tweede knop, alleen naam + mail)
+  const updatesBtn = document.getElementById("updates_btn");
+  if (form && status && updatesBtn) {
+    updatesBtn.addEventListener("click", function () {
+      const data = new FormData(form);
       const email = (data.get("mailadres") || "").toString().trim();
       const naam = (data.get("naam") || "").toString().trim();
-      submitLead(updatesForm, updatesStatus, {
+      if (!email) {
+        status.textContent = "Vul je mailadres in om op de hoogte te blijven.";
+        const mail = document.getElementById("f_mail");
+        if (mail) mail.focus();
+        return;
+      }
+      submitLead(form, status, {
         name: naam || email,
         email: email,
-        message: "Ingeschreven via 'Blijf op de hoogte' op mylastbike.com",
+        message: "Ingeschreven via 'Houd me op de hoogte' op mylastbike.com",
         stage: D.yippie_stage_interesse || "Interesse"
       }, "Gelukt. We houden je op de hoogte.");
     });

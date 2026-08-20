@@ -207,8 +207,7 @@
       <p class="prijs_note">Serieuze interesse? Laat je gegevens achter, dan hoor je de prijs als eerste.</p>
     </section>
 
-    <!-- ══════════ CONTACT + NIEUWSBRIEF ══════════ -->
-    <div class="contact_updates">
+    <!-- ══════════ CONTACT ══════════ -->
     <section class="contact" id="contact">
       <div class="section_head">
         <p class="eyebrow">AANVRAGEN</p>
@@ -238,38 +237,13 @@
           <label for="f_bericht">Vertel kort over jezelf en je huidige fiets <span class="optional">(optioneel)</span></label>
           <textarea id="f_bericht" name="bericht" rows="4"></textarea>
         </div>
-        <button class="cta" type="submit">Verstuur aanvraag</button>
+        <div class="button_row">
+          <button class="cta" type="submit">Verstuur aanvraag</button>
+          <button class="cta cta_alt" type="button" id="updates_btn">Houd me op de hoogte</button>
+        </div>
         <p class="form_status" id="form_status" role="status" aria-live="polite"></p>
       </form>
     </section>
-
-    <!-- ══════════ BLIJF OP DE HOOGTE ══════════ -->
-    <section class="updates" id="updates" aria-labelledby="updates_heading">
-      <div class="updates_inner">
-        <div class="updates_head">
-          <p class="eyebrow">NIEUWSBRIEF</p>
-          <h2 id="updates_heading">Blijf op de hoogte</h2>
-          <p class="updates_intro">Nog niet klaar voor een aanvraag? Laat je mailadres achter en we houden je op de hoogte van de ontwikkelingen rond het frame — geen spam, alleen wat er echt toe doet.</p>
-        </div>
-        <form id="updates_form" method="POST" class="updates_form">
-          <input type="hidden" name="_subject" value="Blijf op de hoogte — My Last Bike">
-          <input type="hidden" name="type" value="nieuwsbrief">
-          <div class="form_row">
-            <div class="field">
-              <label for="u_naam">Naam <span class="optional">(optioneel)</span></label>
-              <input id="u_naam" name="naam" type="text" autocomplete="name">
-            </div>
-            <div class="field">
-              <label for="u_mail">Mailadres</label>
-              <input id="u_mail" name="mailadres" type="email" autocomplete="email" required>
-            </div>
-          </div>
-          <button class="cta" type="submit">Houd me op de hoogte</button>
-          <p class="form_status" id="updates_status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-    </div>
 
   </main>
 
