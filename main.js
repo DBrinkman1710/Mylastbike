@@ -147,6 +147,40 @@
       }).finally(function () { btn.disabled = false; });
     });
   }
+
+  // 5b. Blijf op de hoogte: zelfde Formspree patroon, lichter formulier
+  const updatesForm = document.getElementById("updates_form");
+  const updatesStatus = document.getElementById("updates_status");
+  if (updatesForm) {
+    const uEndpoint = D.formspree || "";
+    const uConfigured = uEndpoint && uEndpoint.indexOf("JOUW_FORM_ID") === -1;
+    if (uConfigured) updatesForm.action = uEndpoint;
+    updatesForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!uConfigured) {
+        updatesStatus.textContent = "Formulier nog niet gekoppeld. Mail ons op " + (D.mailadres || "info@mylastbike.com");
+        return;
+      }
+      const uBtn = updatesForm.querySelector("button[type=submit]");
+      uBtn.disabled = true;
+      updatesStatus.textContent = "Versturen…";
+      fetch(uEndpoint, {
+        method: "POST",
+        body: new FormData(updatesForm),
+        headers: { Accept: "application/json" }
+      }).then(function (res) {
+        if (res.ok) {
+          updatesForm.reset();
+          updatesStatus.textContent = "Gelukt. We houden je op de hoogte.";
+        } else {
+          updatesStatus.textContent = "Versturen mislukt. Probeer het nog eens of mail " + (D.mailadres || "");
+        }
+      }).catch(function () {
+        updatesStatus.textContent = "Geen verbinding. Probeer het nog eens of mail " + (D.mailadres || "");
+      }).finally(function () { uBtn.disabled = false; });
+    });
+  }
+
   // ─── Configurator ───
   initConfigurator();
 

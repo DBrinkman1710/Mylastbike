@@ -468,6 +468,21 @@ section { padding-inline: var(--pad); }
 
 .form_status { margin-top: 1rem; font-family: var(--mono); font-size: 0.82rem; color: var(--bronze); }
 
+/* ═══ blijf op de hoogte ═══ */
+.updates { padding-block: clamp(3rem, 7vh, 5rem); }
+.updates_inner {
+  background: var(--paper_2);
+  border: 1px solid var(--ti_light);
+  border-top: 2px solid var(--ti_dark);
+  padding: clamp(2rem, 5vw, 3rem);
+  max-width: 52rem;
+}
+.updates_head { margin-bottom: 2rem; }
+.updates_head h2 { margin-top: 0.4rem; }
+.updates_intro { max-width: var(--measure); margin-top: 1rem; }
+.updates_form .form_row { margin-bottom: 1.5rem; }
+.updates_form .field { margin-bottom: 0; }
+
 /* ═══ footer ═══ */
 .site_footer {
   background: var(--night);

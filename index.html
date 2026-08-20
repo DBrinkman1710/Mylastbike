@@ -52,10 +52,10 @@
 
     <!-- ══════════ MANIFEST ══════════ -->
     <section class="manifest">
-      <p class="manifest_line">De fietsindustrie draait op vernieuwen. Elk jaar nieuwe jaargangen, nieuwe redenen om te upgraden, en materialen die na tien jaar geen onderdelen meer kennen. Koolstofvezel breekt zonder waarschuwing. Frames worden discontinued. Een fiets van vijf jaar oud is technisch prima maar voelt al verouderd.</p>
-      <p class="manifest_line">Titanium veroudert niet op die manier. Het roest niet, vermoeit nauwelijks en heeft geen lak nodig. Een goed gebouwd frame overleeft de componenten die erop zitten, en ziet ze meerdere keren vervangen worden.</p>
+      <p class="manifest_line">De fietsindustrie draait op vernieuwen. Elk jaar nieuwe jaargangen, nieuwe redenen om te upgraden, en materialen die na tien jaar geen onderdelen meer kennen. Een fiets van vijf jaar oud is technisch prima maar voelt al verouderd.</p>
+      <p class="manifest_line">Titanium veroudert niet op die manier. Het roest niet, vermoeit nauwelijks en heeft geen lak nodig. Een goed gebouwd frame overleeft de componenten die erop zitten, en ziet ze meerdere keren vervangen worden. Titanium is tijdloos.</p>
       <hr class="manifest_rule">
-      <p class="manifest_line small">Niet alleen het frame. De groepsets die wij kiezen gaan decennia mee. De wielen zijn te repareren. Elk onderdeel is geselecteerd op levensduur, niet op jaargangcyclus.</p>
+      <p class="manifest_line small">Niet alleen het frame. We selecteren elk onderdeel op kwaliteit en levensduur, niet op jaargangcyclus. Slijtdelen gaan niet eeuwig mee, maar wat je vervangt komt terug op een frame dat blijft.</p>
       <p class="manifest_line small">Daarom bouwen we er precies één. Geen jaargangen. Geen collecties. Geen opvolger.</p>
     </section>
 
@@ -190,22 +190,6 @@
       </div>
     </section>
 
-    <!-- ══════════ DUURZAAMHEID ══════════ -->
-    <section class="duurzaam" id="duurzaam">
-      <p class="eyebrow">EERLIJK OVER CO2</p>
-      <h2>Wat we nog niet weten, claimen we niet</h2>
-      <div class="duurzaam_grid">
-        <div>
-          <p class="duurzaam_stat" data-key="co2_status">nog geen gemeten cijfers</p>
-          <p class="duurzaam_label">CO2 voetafdruk per frame</p>
-        </div>
-        <div class="duurzaam_text">
-          <p data-key="co2_toelichting">Zodra onze eerste meting er is, staat het getal hier. Niet eerder.</p>
-          <p>De duurzaamste fiets is er één die je nooit hoeft te vervangen. Daarnaast onderzoeken we partnerschappen met carbon credit fondsen om de voetafdruk van elk frame te compenseren. Zodra dat rond is, lees je hier precies hoe het werkt.</p>
-        </div>
-      </div>
-    </section>
-
     <!-- ══════════ PRIJS ══════════ -->
     <section class="prijs" id="prijs">
       <div class="prijs_cards">
@@ -219,7 +203,7 @@
           <p class="prijs_value" data-key="levertijd">wordt nog bepaald</p>
         </div>
       </div>
-      <p class="prijs_incl">Bij elke fiets meegeleverd: een complete poetsset om het titanium in topconditie te houden, plus een eigen gimmick die je nergens anders krijgt.</p>
+      <p class="prijs_incl">Bij elke fiets meegeleverd: een complete poetsset om het titanium in topconditie te houden.</p>
       <p class="prijs_note">Serieuze interesse? Laat je gegevens achter, dan hoor je de prijs als eerste.</p>
     </section>
 
@@ -256,6 +240,33 @@
         <button class="cta" type="submit">Verstuur aanvraag</button>
         <p class="form_status" id="form_status" role="status" aria-live="polite"></p>
       </form>
+    </section>
+
+    <!-- ══════════ BLIJF OP DE HOOGTE ══════════ -->
+    <section class="updates" id="updates" aria-labelledby="updates_heading">
+      <div class="updates_inner">
+        <div class="updates_head">
+          <p class="eyebrow">NIEUWSBRIEF</p>
+          <h2 id="updates_heading">Blijf op de hoogte</h2>
+          <p class="updates_intro">Nog niet klaar voor een aanvraag? Laat je mailadres achter en we houden je op de hoogte van de ontwikkelingen rond het frame — geen spam, alleen wat er echt toe doet.</p>
+        </div>
+        <form id="updates_form" method="POST" class="updates_form">
+          <input type="hidden" name="_subject" value="Blijf op de hoogte — My Last Bike">
+          <input type="hidden" name="type" value="nieuwsbrief">
+          <div class="form_row">
+            <div class="field">
+              <label for="u_naam">Naam <span class="optional">(optioneel)</span></label>
+              <input id="u_naam" name="naam" type="text" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="u_mail">Mailadres</label>
+              <input id="u_mail" name="mailadres" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <button class="cta" type="submit">Houd me op de hoogte</button>
+          <p class="form_status" id="updates_status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </section>
 
   </main>
