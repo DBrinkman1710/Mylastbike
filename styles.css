@@ -430,7 +430,10 @@ section { padding-inline: var(--pad); }
 .contact_updates > .contact,
 .contact_updates > .updates { padding: 0; }
 .contact_updates > .updates { display: flex; }
-.contact_updates > .updates > .updates_inner { flex: 1; max-width: none; }
+.contact_updates > .updates > .updates_inner {
+  flex: 1; max-width: none;
+  display: flex; flex-direction: column; justify-content: center;
+}
 
 /* ═══ contact ═══ */
 .contact { padding-block: clamp(4rem, 10vh, 7rem); }
