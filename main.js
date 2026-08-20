@@ -114,70 +114,74 @@
     el.textContent = MODES.road[el.getAttribute("data-mode-field")] || "";
   });
 
-  // 5. Formulier: naar Formspree zodra een echt form id is ingesteld
+  // 5. Formulieren: sturen leads naar Yippie (public lead endpoint).
+  //    Elk formulier landt in een eigen Kanban stage. Zolang de slug in
+  //    data.js nog op de placeholder staat, tonen we een mailto terugval.
+  const yEndpointBase = D.yippie_api || "";
+  const ySlug = D.yippie_slug || "";
+  const yConfigured = ySlug && ySlug.indexOf("JOUW_SLUG") === -1 && yEndpointBase;
+  const yLeadUrl = yConfigured ? yEndpointBase + encodeURIComponent(ySlug) : "";
+
+  function submitLead(formEl, statusEl, payload, successText) {
+    if (!yConfigured) {
+      statusEl.textContent = "Nog niet gekoppeld. Mail ons op " + (D.mailadres || "info@mylastbike.com");
+      return;
+    }
+    const btn = formEl.querySelector("button[type=submit]");
+    if (btn) btn.disabled = true;
+    statusEl.textContent = "Versturen…";
+    fetch(yLeadUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function (res) {
+      if (res.ok) {
+        formEl.reset();
+        statusEl.textContent = successText;
+      } else {
+        statusEl.textContent = "Versturen mislukt. Probeer het nog eens of mail " + (D.mailadres || "");
+      }
+    }).catch(function () {
+      statusEl.textContent = "Geen verbinding. Probeer het nog eens of mail " + (D.mailadres || "");
+    }).finally(function () { if (btn) btn.disabled = false; });
+  }
+
+  // 5a. Aanvraagformulier → Kanban stage "Aanvragen"
   const form = document.getElementById("enquiry_form");
   const status = document.getElementById("form_status");
-  if (form) {
-    const endpoint = D.formspree || "";
-    const configured = endpoint && endpoint.indexOf("JOUW_FORM_ID") === -1;
-    if (configured) form.action = endpoint;
+  if (form && status) {
     form.addEventListener("submit", function (e) {
-      if (!configured) {
-        e.preventDefault();
-        status.textContent = "Formulier nog niet gekoppeld. Mail ons op " + (D.mailadres || "info@mylastbike.com");
-        return;
-      }
       e.preventDefault();
-      const btn = form.querySelector("button[type=submit]");
-      btn.disabled = true;
-      status.textContent = "Versturen…";
-      fetch(endpoint, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" }
-      }).then(function (res) {
-        if (res.ok) {
-          form.reset();
-          status.textContent = "Ontvangen. We nemen binnen twee werkdagen contact op.";
-        } else {
-          status.textContent = "Versturen mislukt. Probeer het nog eens of mail " + (D.mailadres || "");
-        }
-      }).catch(function () {
-        status.textContent = "Geen verbinding. Probeer het nog eens of mail " + (D.mailadres || "");
-      }).finally(function () { btn.disabled = false; });
+      const data = new FormData(form);
+      const opzet = (data.get("opzet") || "").toString();
+      const bericht = (data.get("bericht") || "").toString().trim();
+      const parts = [];
+      if (opzet) parts.push("Rijdt vooral: " + opzet);
+      if (bericht) parts.push(bericht);
+      submitLead(form, status, {
+        name: (data.get("naam") || "").toString().trim(),
+        email: (data.get("mailadres") || "").toString().trim(),
+        message: parts.join("\n\n") || null,
+        stage: D.yippie_stage_aanvraag || "Aanvragen"
+      }, "Ontvangen. We nemen binnen twee werkdagen contact op.");
     });
   }
 
-  // 5b. Blijf op de hoogte: zelfde Formspree patroon, lichter formulier
+  // 5b. Blijf op de hoogte → Kanban stage "Interesse"
   const updatesForm = document.getElementById("updates_form");
   const updatesStatus = document.getElementById("updates_status");
-  if (updatesForm) {
-    const uEndpoint = D.formspree || "";
-    const uConfigured = uEndpoint && uEndpoint.indexOf("JOUW_FORM_ID") === -1;
-    if (uConfigured) updatesForm.action = uEndpoint;
+  if (updatesForm && updatesStatus) {
     updatesForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      if (!uConfigured) {
-        updatesStatus.textContent = "Formulier nog niet gekoppeld. Mail ons op " + (D.mailadres || "info@mylastbike.com");
-        return;
-      }
-      const uBtn = updatesForm.querySelector("button[type=submit]");
-      uBtn.disabled = true;
-      updatesStatus.textContent = "Versturen…";
-      fetch(uEndpoint, {
-        method: "POST",
-        body: new FormData(updatesForm),
-        headers: { Accept: "application/json" }
-      }).then(function (res) {
-        if (res.ok) {
-          updatesForm.reset();
-          updatesStatus.textContent = "Gelukt. We houden je op de hoogte.";
-        } else {
-          updatesStatus.textContent = "Versturen mislukt. Probeer het nog eens of mail " + (D.mailadres || "");
-        }
-      }).catch(function () {
-        updatesStatus.textContent = "Geen verbinding. Probeer het nog eens of mail " + (D.mailadres || "");
-      }).finally(function () { uBtn.disabled = false; });
+      const data = new FormData(updatesForm);
+      const email = (data.get("mailadres") || "").toString().trim();
+      const naam = (data.get("naam") || "").toString().trim();
+      submitLead(updatesForm, updatesStatus, {
+        name: naam || email,
+        email: email,
+        message: "Ingeschreven via 'Blijf op de hoogte' op mylastbike.com",
+        stage: D.yippie_stage_interesse || "Interesse"
+      }, "Gelukt. We houden je op de hoogte.");
     });
   }
 

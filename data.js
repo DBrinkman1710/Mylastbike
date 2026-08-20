@@ -30,9 +30,14 @@ window.SITE_DATA = {
   // Contact
   mailadres: "info@mylastbike.com",
 
-  // Formspree endpoint: maak een gratis form aan op formspree.io
-  // en vervang JOUW_FORM_ID door de echte code.
-  formspree: "https://formspree.io/f/JOUW_FORM_ID",
+  // Yippie lead capture. De formulieren sturen leads rechtstreeks naar Yippie.
+  // Vervang JOUW_SLUG door de tenant slug uit Yippie:
+  //   Instellingen → Workspace → Enquiry form snippet (de code in /public/lead/<slug>).
+  // yippie_stage_* moeten exact overeenkomen met de Kanban stagenamen in Yippie.
+  yippie_api: "https://app.getyippie.com/api/v1/public/lead/",
+  yippie_slug: "JOUW_SLUG",
+  yippie_stage_aanvraag: "Aanvragen",
+  yippie_stage_interesse: "Interesse",
 
   // Configurator — alleen de keuzes met echte impact staan als selectie.
   // De definitieve specificatie leggen we altijd samen vast tijdens het intakegesprek.
